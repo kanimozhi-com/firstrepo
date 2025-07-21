@@ -1,13 +1,13 @@
-name: Test GitHub Actions
+name: Hello Workflow
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:  # allows manual trigger
 
 jobs:
-  test-action:
-    runs-on: self-hosted
-
+  say-hello:
+    runs-on: self-hosted  # run on your own machine
+    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Print Hello
+        run: echo "👋 Hello from your self-hosted runner!"
+
